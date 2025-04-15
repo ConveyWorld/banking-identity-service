@@ -1,0 +1,12 @@
+services:
+  postgresql:
+    container_name: postgresql
+    image: postgres:16.2
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    volumes:
+      - ./docker-volumes/postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
